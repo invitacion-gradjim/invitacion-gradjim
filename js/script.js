@@ -81,7 +81,7 @@ window.addEventListener("load", () => {
 /****************************
  BOTÓN CONFIRMAR
 *****************************/
-import { db } from "/js/firebase-config.js";
+import { db } from "./firebase-config.js";
 import { collection, addDoc } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-firestore.js";
 const btn = document.getElementById("confirmarBtn");
 
