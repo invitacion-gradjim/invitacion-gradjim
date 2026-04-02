@@ -1,4 +1,9 @@
+// 🔥 IMPORTS SIEMPRE ARRIBA
+import { db } from "./firebase-config.js";
+import { collection, addDoc } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-firestore.js";
+
 console.log("JS CARGADO 🔥");
+
 window.addEventListener("load", () => {
 
   /****************************
@@ -18,25 +23,10 @@ window.addEventListener("load", () => {
 
     if (timer) {
       timer.innerHTML = `
-        <div class="tiempo">
-          <span>${days}</span>
-          <small>DÍAS</small>
-        </div>
-
-        <div class="tiempo">
-          <span>${hours}</span>
-          <small>HORAS</small>
-        </div>
-
-        <div class="tiempo">
-          <span>${minutes}</span>
-          <small>MINUTOS</small>
-        </div>
-
-        <div class="tiempo">
-          <span>${seconds}</span>
-          <small>SEGUNDOS</small>
-        </div>
+        <div class="tiempo"><span>${days}</span><small>DÍAS</small></div>
+        <div class="tiempo"><span>${hours}</span><small>HORAS</small></div>
+        <div class="tiempo"><span>${minutes}</span><small>MINUTOS</small></div>
+        <div class="tiempo"><span>${seconds}</span><small>SEGUNDOS</small></div>
       `;
     }
   }, 1000);
@@ -57,12 +47,9 @@ window.addEventListener("load", () => {
         entry.target.style.opacity = 1;
       }
     });
-  }, {
-    threshold: 0.2
-  });
+  }, { threshold: 0.2 });
 
   elementos.forEach(el => observer.observe(el));
-
 
 
   /****************************
@@ -76,42 +63,43 @@ window.addEventListener("load", () => {
     document.getElementById("modal").style.display = "none";
   }
 
-/****************************
- BOTÓN CONFIRMAR
-*****************************/
-import { db } from "./firebase-config.js";
-import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-firestore.js";
-const btn = document.getElementById("confirmarBtn");
 
-const MAX_INVITADOS = document.body.dataset.max;
-btn.addEventListener("click", async () => {
-  const nombre = document.getElementById("nombre").value;
-  const invitados = parseInt(document.getElementById("invitados").value);
+  /****************************
+  BOTÓN CONFIRMAR
+  *****************************/
+  const btn = document.getElementById("confirmarBtn");
 
-  if (!nombre || !invitados) {
-    alert("Por favor llena todos los campos ♥");
-    return;
-  }
+  if (btn) {
+    const MAX_INVITADOS = document.body.dataset.max;
 
-  if (invitados > MAX_INVITADOS) {
-    alert(`Solo puedes confirmar hasta ${MAX_INVITADOS} invitados ♥`);
-    return;
-  }
+    btn.addEventListener("click", async () => {
+      const nombre = document.getElementById("nombre").value;
+      const invitados = parseInt(document.getElementById("invitados").value);
 
-  try {
-    await addDoc(collection(db, "asistencias"), {
-      nombre: nombre,
-      invitados: invitados,
+      if (!nombre || !invitados) {
+        alert("Por favor llena todos los campos ♥");
+        return;
+      }
+
+      if (invitados > MAX_INVITADOS) {
+        alert(`Solo puedes confirmar hasta ${MAX_INVITADOS} invitados ♥`);
+        return;
+      }
+
+      try {
+        await addDoc(collection(db, "asistencias"), {
+          nombre,
+          invitados,
+        });
+
+        alert("Confirmación guardada ♥");
+        cerrarModal();
+
+      } catch (error) {
+        console.error("ERROR REAL:", error);
+        alert(error.message);
+      }
     });
+  }
 
-    alert("Confirmación guardada ♥");
-    cerrarModal();
-
-  } 
-  catch (error) {
-  console.error("ERROR REAL:", error);
-  alert(error.message);
-}
 });
-});
-
