@@ -74,14 +74,11 @@ window.addEventListener("load", () => {
   window.cerrarModal = function () {
     document.getElementById("modal").style.display = "none";
   }
-})
-
-
 
 /****************************
  BOTÓN CONFIRMAR
 *****************************/
-import { db } from "firebase-config.js";
+import { db } from "./firebase-config.js";
 import { collection, addDoc } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-firestore.js";
 const btn = document.getElementById("confirmarBtn");
 
@@ -115,3 +112,5 @@ btn.addEventListener("click", async () => {
   alert(error.message);
 }
 });
+});
+
