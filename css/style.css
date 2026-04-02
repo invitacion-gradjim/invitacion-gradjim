@@ -1,0 +1,446 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "EB Garamond", serif;
+  font-size: 20px;
+  font-weight: lighter;
+  background: #eaeaea;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* CONTENEDOR */
+.container {
+  width: 100%;
+  max-width: 420px;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 0; /* 🔥 quitamos el borde blanco */
+}
+
+/* CARD */
+.card {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* FONDO */
+.card .fondo {
+  position: absolute;
+  inset: 0; /* reemplaza top/left/width/height */
+  z-index: 0;
+}
+
+.card .fondo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block; /* 🔥 elimina espacio fantasma */
+}
+
+/* CONTENIDO */
+.card-principal {
+  position: relative;
+  margin: 40px 60px;
+  padding: 30px;
+  background: white;
+  border: 10px solid #000;
+  border-radius: 250px 250px 0 0;
+  text-align: center;
+  z-index: 1;
+}
+
+/* LOGO */
+.logotipo {
+  text-align: center;
+  margin-top: 10px;
+  height: 150px;
+}
+
+.logotipo svg {
+  height: 120px;
+}
+
+/* TEXTO */
+.subtitulo {
+  font-size: 18px;
+}
+
+.nombre {
+  font-size: 36px;
+  margin: 10px 0;
+}
+
+/* ILUSTRACIÓN */
+.ilustracion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ilustracion img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+
+/* MENSAJE */
+.mensaje {
+  margin-top: 50px;
+  text-align: center;
+  padding: 0 20% 0 20%; 
+
+}
+
+h3 {
+  margin-top: -10px;
+  font-family: "Dancing Script", cursive;
+  font-size: 150%;
+}
+/*----------------DIVISIONES-----------------------*/
+/*LINEA BOW*/
+.divider {
+  text-align: center;
+}
+
+.divider svg {
+  width: 60%;
+}
+
+/*ESTRELLA*/
+.star-divider {
+  text-align: center;
+}
+
+.star-divider svg {
+  width: 30px;
+}
+
+/*GIFT*/
+.gift-divider {
+  text-align: center;
+}
+
+.gift-divider svg {
+  width: 60%;
+}
+/*-------------------------------------------------*/
+
+
+/* FECHA */
+.fecha {
+  text-align: center;
+  padding: 20px;
+}
+
+.fecha-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.lado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.texto {
+  font-family: "Dancing Script", cursive;
+  font-size: 28px;
+}
+
+.dia {
+  font-size: 80px;
+  font-weight: normal;
+}
+
+.linea {
+  width: 100px;
+  height: 1px;
+  background: #000;
+}
+
+/* HORA */
+.hora {
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 40px;
+}
+
+.textohora {
+  font-family: "Dancing Script", cursive;
+  font-size: 32px;
+}
+
+.lineahora {
+  width: 200px;
+  height: 1px;
+  background: #000;
+}
+
+h2 {
+  font-family: "Dancing Script", cursive;
+  font-size: 40px;
+}
+
+.bow {
+  padding-top: 50px;
+}
+
+/* CONTADOR */
+.faltan-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.faltan-texto {
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.icono svg {
+  color: white;
+  height: 20px;
+}
+
+.contador {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 10px 30px 40px 30px;
+  margin-bottom: 50px;
+}
+
+.timer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.tiempo {
+  padding: 10px;
+  min-width: 70px;
+  text-align: center;
+  position: relative;
+}
+
+.tiempo span {
+  font-size: 40px;
+  display: block;
+  font-family: 'Georgia', serif;
+  animation: latido 2s infinite ease-in-out;
+}
+
+@keyframes latido {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+.tiempo:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 10%;
+  height: 80%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.tiempo small {
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+/* UBICACIÓN */
+.ubicacion {
+  text-align: center;
+  padding: 20px;
+  margin-top: -40px;
+}
+
+.ubicacion h2 {
+  margin-top: -15px;
+}
+
+.mapa {
+  height: 300px;
+  background: #ddd;
+  margin-top: 10px;
+}
+
+/* REGALO */
+.regalo {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.regalo p {
+  font-size: 18px;
+  padding: 0 20% 0 20%; 
+}
+
+.gift {
+  margin: 0 0 -30px 0;
+}
+
+/* CONFIRMAR */
+.confirmacion {
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.btn {
+  font-family: "EB Garamond", serif;
+  font-size: 18px;
+  background: #000;
+  color: #fff;
+  padding: 12px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  max-width: 250px;
+}
+
+.btn:hover {
+  background: #1b1b1b;
+  transform: scale(1.05);
+}
+/* FONDO OSCURO */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* CAJITA */
+.modal-contenido {
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 350px;
+  text-align: center;
+  position: relative;
+  animation: fadeIn 0.4s ease;
+}
+
+/* BOTÓN CERRAR */
+.cerrar {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* INPUTS */
+.modal-contenido input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-family: inherit;
+}
+
+/* BOTÓN */
+.btn-confirmar {
+  margin-top: 10px;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 20px;
+  background: #000;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-confirmar:hover {
+  background: #333;
+  transform: scale(1.05);
+}
+
+/* ANIMACIÓN */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* INVITACIÓN */
+.invitacion {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.invitacion h2 {
+  margin-top: -20px;
+}
+
+/* RESPONSIVE------------------------------------------------------------------------------- */
+@media (min-width: 768px) {
+  .container {
+    max-width: 600px;
+  }
+
+  .nombre {
+    font-size: 48px;
+  }
+
+  .hora h2 {
+    font-size: 50px;
+  }
+}
+
+/* ANIMACIONES */
+.animar {
+  opacity: 0;
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 18px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+
+  .dia {
+    font-size: 40px;
+  }
+}
