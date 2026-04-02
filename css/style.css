@@ -422,10 +422,10 @@ h2 {
   }
 }
 
-/* ANIMACIONES */
+/* ANIMACIONES 
 .animar {
   opacity: 0;
-}
+}*/
 
 @media (max-width: 480px) {
   body {
