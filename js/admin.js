@@ -1,4 +1,4 @@
-import { db } from "firebase-config.js";
+import { db } from "./firebase-config.js";
 import { collection, getDocs } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-firestore.js";
 
 async function cargarDatos() {
