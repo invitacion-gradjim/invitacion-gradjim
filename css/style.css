@@ -64,7 +64,6 @@ body {
 
 .logotipo svg {
   height: 120px;
-  padding-right: 10px;
 }
 
 /* TEXTO */
@@ -443,5 +442,15 @@ h2 {
 
   .dia {
     font-size: 40px;
+  }
+}
+@media (max-width: 480px) {
+  .logotipo {
+    margin-top: 5px;
+    height: auto;
+  }
+
+  .logotipo svg {
+    height: 80px; /* antes 120px */
   }
 }
