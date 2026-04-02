@@ -29,6 +29,7 @@ body {
   width: 100%;
 }
 
+
 /* FONDO */
 .card .fondo {
   position: absolute;
@@ -453,4 +454,47 @@ h2 {
   .logotipo svg {
     height: 80px; /* antes 120px */
   }
+  @media (max-width: 480px) {
+
+  .contador {
+    padding: 10px 15px 25px 15px;
+  }
+
+  .timer {
+    gap: 5px;
+  }
+
+  .tiempo {
+    min-width: 55px;
+    padding: 5px;
+  }
+
+  .tiempo span {
+    font-size: 28px; /* números más pequeños */
+  }
+
+  .tiempo small {
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
+}
+  
+}
+@media (max-width: 480px) {
+
+  .regalo {
+    padding: 20px 15px;
+  }
+
+  .regalo p {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .gift {
+    width: 70px; /* si es imagen */
+    margin-bottom: -20px;
+  }
+
 }
