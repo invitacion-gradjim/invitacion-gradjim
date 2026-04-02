@@ -1,3 +1,4 @@
+console.log("JS CARGADO 🔥");
 window.addEventListener("load", () => {
 
   /****************************
